@@ -19,7 +19,7 @@ pipeline {
                               dir("cidr_convert_api/java/cidr-api"){
 
                                script{                   
-                               sh 'mvn clean package -DskipTests'
+                               sh 'mvn clean package'
                                  }
                                   }
                           }
