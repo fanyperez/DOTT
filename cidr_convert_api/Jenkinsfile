@@ -23,6 +23,21 @@ pipeline {
 	                }
 	           
 	  
+                    stage ('SonarQube Analysis'){
+                        steps {
+                                dir("cidr_convert_api/java/cidr-api") {
+                                      withSonarQubeEnv('sonarqube') {
+                                          sh "mvn sonar:sonar"
+                                                    }
+                                                }
+                    
+
+                                               }
+              
+
+                                          } 
+
+
 	            stage ('Create docker image') {
 	                steps {
 	                 echo "creando docker"
