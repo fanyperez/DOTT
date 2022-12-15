@@ -38,7 +38,8 @@ pipeline {
                         dir("cidr_convert_api/java/cidr-api"){
 
                       sh 'mvn test'
-                    junit testResults: 'results.xml', skipPublishingChecks: true
+                junit skipPublishingChecks: true, testResults: '**/cpputest_*.xml'
+
 
 
 
