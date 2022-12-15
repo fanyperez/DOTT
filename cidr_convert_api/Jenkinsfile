@@ -38,8 +38,7 @@ pipeline {
                     dir("cidr_convert_api/java/cidr-api"){
                                  script{
                        sh 'mvn clean verify -DskipITs=true';
-			junit ' cd cidr_convert_api/java/cidr-api/src/**/*.xml'
-   
+                           sh 'cat target/surefire-reports/TEST-*.xml'   
                                         }
                                       }
                                   }
