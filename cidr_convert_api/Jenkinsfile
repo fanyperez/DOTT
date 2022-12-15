@@ -37,7 +37,7 @@ pipeline {
 			 steps {
                     dir("cidr_convert_api/java/cidr-api"){
                                  script{
-                       sh 'mvn clean verify -DskipITs=true';
+                      
                            sh 'cat target/surefire-reports/TEST-*.xml'   
                                         }
                                       }
