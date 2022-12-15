@@ -38,11 +38,17 @@ pipeline {
                     dir("cidr_convert_api/java/cidr-api"){
                                  script{
                           sh 'mvn test'
-                           sh 'cat target/surefire-reports/TEST-*.xml'   
-                                        }
+				 }
+		           }
+			 }
+                      post {
+                          always {
+                              junit 'target/surefire-reports/*.xml'
+                                     }
                                       }
                                   }
-		         }
+		            
+			
                         
 	            stage ('Create docker image') {
 	                steps {
