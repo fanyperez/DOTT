@@ -38,7 +38,7 @@ pipeline {
                         dir("cidr_convert_api/java/cidr-api"){
 
                       sh 'mvn test'
-                     junit allowEmptyResults: true, testResults: "${WORKSPACE}/test-results/*.xml"
+                    junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
 
 
                            }
