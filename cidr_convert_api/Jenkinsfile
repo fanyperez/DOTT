@@ -37,8 +37,7 @@ pipeline {
 			 steps {
                         dir("cidr_convert_api/java/cidr-api"){
 
-                      sh 'mvn test' 
-           sh 'cd src/ ; java -jar ../lib/junit-platform-console-standalone-1.7.0-all.jar -cp "." --select-class CarTest --reports-dir="reports"'
+                      sh 'mvn clean install test surefire-report:report'
                       junit '**/target/surefire-reports/TEST-*.xml'
 
                            }
