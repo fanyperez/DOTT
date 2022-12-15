@@ -31,6 +31,18 @@ pipeline {
                       }
                      }
                   }
+			 
+			 
+                 stage('Testing'){ 
+			 steps {
+                    dir("cidr_convert_api/java/cidr-api"){
+                                 script{
+               sh 'mvn clean verify -DskipITs=true';junit '**/target/surefire-reports/TEST-*.xml'archive 'target/*.jar'
+   
+                                        }
+                                      }
+                                  }
+		         }
                         
 	            stage ('Create docker image') {
 	                steps {
