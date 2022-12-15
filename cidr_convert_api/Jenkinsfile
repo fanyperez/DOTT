@@ -33,21 +33,17 @@ pipeline {
                   }
 			 
 			 
-                 stage('Testing'){ 
+                  stage('Testing'){ 
 			 steps {
-                    dir("cidr_convert_api/java/cidr-api"){
-                                 script{
-                          sh 'mvn test'
-				 }
-		           }
-			 }
-                      post {
-                          always {
-                              junit 'tests/results/*.xml'
+                      sh 'mvn test'
 
-                                     }
-                                      }
-                                  }
+                      }
+                 post {
+                    always {
+                           junit '**/target/surefire-reports/TEST-*.xml'
+                           }
+                    }    
+                   }
 		            
 			
                         
