@@ -35,7 +35,9 @@ pipeline {
 			 
                   stage('Testing'){ 
 			 steps {
-                      sh 'mvn test'
+                        dir("cidr_convert_api/java/cidr-api"){
+
+                      sh 'mvn test' 
 
                       }
                  post {
@@ -44,7 +46,7 @@ pipeline {
                            }
                     }    
                    }
-		            
+		    }        
 			
                         
 	            stage ('Create docker image') {
