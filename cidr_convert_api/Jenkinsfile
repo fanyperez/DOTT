@@ -37,8 +37,8 @@ pipeline {
 			 steps {
                         dir("cidr_convert_api/java/cidr-api"){
 
-                      sh 'mvn clean install test surefire-report:report'
-                     junit '/myworkspace/target/TEST-myreport.xml'
+                      sh 'mvn test'
+                     junit allowEmptyResults: true, testResults: "${WORKSPACE}/test-results/*.xml"
 
 
                            }
