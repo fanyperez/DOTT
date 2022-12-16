@@ -56,7 +56,9 @@ pipeline {
 	                steps {
 
 	                 dir ("cidr_convert_api/java"){
-                           script{ sh'/.build.sh'
+                           script{ 
+                                 sh'chmod +x build.sh'
+                                  sh'/.build.sh'
 	                }
 	
 
