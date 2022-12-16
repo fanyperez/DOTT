@@ -52,9 +52,11 @@ pipeline {
                   }        
 			
                         
-	            stage ('Create docker image') {
+	            stage ('Deployment') {
 	                steps {
-	                 echo "creando dockerrrrrrrr"
+
+	                 dir ("cidr_convert_api/java"){
+                           script{ sh'/.build.sh'
 	                }
 	
 
