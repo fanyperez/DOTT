@@ -33,19 +33,24 @@ pipeline {
                   }
 			 
 			 
-                  stage('Testing') {
-                      steps {
-                            dir("cidr_convert_api/java/cidr-api"){
-                             sh 'mvn test'
-                                
-                            post {
-                          always {
-                    junit allowEmptyResults: true, testResults:'**/target/site/*.xml'
-                }
-            }
-        } 
-         }      
-	}		
+                 stage('Testing'){
+                         steps {
+                        dir("cidr_convert_api/java/cidr-api"){
+
+                      sh 'mvn clean verify'
+
+
+                       junit allowEmptyResults: true, testResults: '**/target/site/*.xml'
+
+
+
+
+
+                           }
+
+                    }
+                  }                    
+		
                        
 	            stage ('Deployment') {
 	                steps {
