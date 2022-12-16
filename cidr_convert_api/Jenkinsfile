@@ -57,7 +57,8 @@ pipeline {
 
 	                 dir ("cidr_convert_api/java/cidr-api"){
                            script{ 
-                sh'./start.sh'
+                          sh'chmod +x start.sh'
+                           sh'./start.sh'
 
 	                }
 	
