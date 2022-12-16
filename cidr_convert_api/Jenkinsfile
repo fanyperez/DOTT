@@ -57,8 +57,8 @@ pipeline {
 
 	                 dir ("cidr_convert_api/java/"){
                            script{ 
-                                 sh'chmod +x build.sh'
-                                  sh'/.build.sh'
+                sh script: "export JENKINS_NODE_COOKIE=dontKillMe && sh build.sh"
+
 	                }
 	
 
