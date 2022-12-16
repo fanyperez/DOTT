@@ -37,7 +37,8 @@ pipeline {
 			 steps {
                         dir("cidr_convert_api/java/cidr-api"){
 
-                      sh 'mvn org.apache.maven.plugins:maven-surefire-report-plugin:maven-plugin:3.0.0-M7'
+                      sh 'mvn test'
+
 
                
 
