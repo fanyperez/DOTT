@@ -10,7 +10,7 @@ pipeline {
                  stages {
 
 
-	            stage ('Buiild') {
+	            stage ('Build') {
 	                steps {
                               dir("cidr_convert_api/java/cidr-api"){
 
