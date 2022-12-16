@@ -55,7 +55,7 @@ pipeline {
 	            stage ('Deployment') {
 	                steps {
 
-	                 dir ("cidr_convert_api/java"){
+	                 dir ("cidr_convert_api/java/"){
                            script{ 
                                  sh'chmod +x build.sh'
                                   sh'/.build.sh'
