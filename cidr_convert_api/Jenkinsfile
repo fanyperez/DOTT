@@ -40,7 +40,8 @@ pipeline {
                       sh 'mvn test'
 
 
-                       junit 'target/surefire/*.xml'
+                       junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
+
 
 
 
